@@ -1,0 +1,90 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     x_train_gr_smpl-weka.filters.unsupervised.instance.Randomize-S42-weka.filters.unsupervised.attribute.NumericToNominal-Rlast
+Instances:    9690
+Attributes:   2305
+              [list of attributes omitted]
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+X1713 <= 59
+|   X1469 <= 88: 1 (4142.0)
+|   X1469 > 88
+|   |   X1328 <= 40
+|   |   |   X1522 <= 35: 0 (7.0)
+|   |   |   X1522 > 35: 1 (18.0)
+|   |   X1328 > 40: 1 (534.0)
+X1713 > 59
+|   X1176 <= 54
+|   |   X1507 <= 58: 1 (60.0)
+|   |   X1507 > 58
+|   |   |   X1697 <= 58: 1 (14.0)
+|   |   |   X1697 > 58
+|   |   |   |   X1378 <= 97
+|   |   |   |   |   X1412 <= 58
+|   |   |   |   |   |   X938 <= 49: 0 (5.0)
+|   |   |   |   |   |   X938 > 49: 1 (4.0)
+|   |   |   |   |   X1412 > 58
+|   |   |   |   |   |   X941 <= 82: 0 (146.0)
+|   |   |   |   |   |   X941 > 82
+|   |   |   |   |   |   |   X1553 <= 149: 1 (2.0)
+|   |   |   |   |   |   |   X1553 > 149: 0 (6.0)
+|   |   |   |   X1378 > 97: 1 (9.0)
+|   X1176 > 54
+|   |   X1517 <= 219
+|   |   |   X1416 <= 44
+|   |   |   |   X1807 <= 48: 0 (7.0)
+|   |   |   |   X1807 > 48: 1 (35.0/1.0)
+|   |   |   X1416 > 44
+|   |   |   |   X1177 <= 77
+|   |   |   |   |   X1506 <= 136: 1 (335.0/3.0)
+|   |   |   |   |   X1506 > 136
+|   |   |   |   |   |   X1518 <= 175: 1 (17.0/1.0)
+|   |   |   |   |   |   X1518 > 175: 0 (20.0)
+|   |   |   |   X1177 > 77: 1 (3780.0/3.0)
+|   |   X1517 > 219
+|   |   |   X1085 <= 124
+|   |   |   |   X70 <= 102: 0 (41.0)
+|   |   |   |   X70 > 102: 1 (8.0)
+|   |   |   X1085 > 124: 1 (500.0)
+
+Number of Leaves  : 	21
+
+Size of the tree : 	41
+
+
+Time taken to build model: 52.59 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 1.77 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        3048               98.6408 %
+Incorrectly Classified Instances        42                1.3592 %
+Kappa statistic                          0.6043
+Mean absolute error                      0.0142
+Root mean squared error                  0.1161
+Relative absolute error                 32.6806 %
+Root relative squared error             84.0831 %
+Total Number of Instances             3090     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.550    0.005    0.688      0.550    0.611      0.608    0.845     0.440     0
+                 0.995    0.450    0.991      0.995    0.993      0.608    0.845     0.994     1
+Weighted Avg.    0.986    0.441    0.985      0.986    0.986      0.608    0.845     0.983     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+   33   27 |    a = 0
+   15 3015 |    b = 1
+

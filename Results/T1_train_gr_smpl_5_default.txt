@@ -1,0 +1,93 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     x_train_gr_smpl-weka.filters.unsupervised.instance.Randomize-S42-weka.filters.unsupervised.attribute.NumericToNominal-Rlast
+Instances:    9690
+Attributes:   2305
+              [list of attributes omitted]
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+X794 <= 10: 0 (30.0)
+X794 > 10
+|   X1461 <= 98: 1 (6134.0)
+|   X1461 > 98
+|   |   X1318 <= 65
+|   |   |   X1554 <= 103: 1 (53.0)
+|   |   |   X1554 > 103
+|   |   |   |   X1178 <= 87: 1 (9.0)
+|   |   |   |   X1178 > 87
+|   |   |   |   |   X1369 <= 121: 0 (83.0)
+|   |   |   |   |   X1369 > 121
+|   |   |   |   |   |   X1281 <= 76: 0 (3.0)
+|   |   |   |   |   |   X1281 > 76: 1 (4.0)
+|   |   X1318 > 65
+|   |   |   X1372 <= 71
+|   |   |   |   X1520 <= 88: 1 (55.0/1.0)
+|   |   |   |   X1520 > 88
+|   |   |   |   |   X1167 <= 118
+|   |   |   |   |   |   X2126 <= 88: 0 (52.0/1.0)
+|   |   |   |   |   |   X2126 > 88: 1 (5.0)
+|   |   |   |   |   X1167 > 118: 1 (15.0)
+|   |   |   X1372 > 71
+|   |   |   |   X1270 <= 63
+|   |   |   |   |   X1032 <= 166: 1 (31.0/1.0)
+|   |   |   |   |   X1032 > 166: 0 (6.0)
+|   |   |   |   X1270 > 63
+|   |   |   |   |   X1181 <= 86
+|   |   |   |   |   |   X1226 <= 50: 0 (3.0)
+|   |   |   |   |   |   X1226 > 50
+|   |   |   |   |   |   |   X1322 <= 50: 0 (2.0)
+|   |   |   |   |   |   |   X1322 > 50: 1 (38.0/1.0)
+|   |   |   |   |   X1181 > 86
+|   |   |   |   |   |   X1612 <= 91
+|   |   |   |   |   |   |   X1939 <= 103
+|   |   |   |   |   |   |   |   X1218 <= 87
+|   |   |   |   |   |   |   |   |   X1370 <= 71: 0 (3.0)
+|   |   |   |   |   |   |   |   |   X1370 > 71: 1 (11.0)
+|   |   |   |   |   |   |   |   X1218 > 87: 1 (82.0)
+|   |   |   |   |   |   |   X1939 > 103
+|   |   |   |   |   |   |   |   X2051 <= 107: 0 (7.0)
+|   |   |   |   |   |   |   |   X2051 > 107: 1 (3.0)
+|   |   |   |   |   |   X1612 > 91
+|   |   |   |   |   |   |   X1899 <= 236: 1 (3025.0/4.0)
+|   |   |   |   |   |   |   X1899 > 236
+|   |   |   |   |   |   |   |   X1319 <= 117: 0 (15.0)
+|   |   |   |   |   |   |   |   X1319 > 117: 1 (21.0)
+
+Number of Leaves  : 	24
+
+Size of the tree : 	47
+
+
+Time taken to build model: 42.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        9624               99.3189 %
+Incorrectly Classified Instances        66                0.6811 %
+Kappa statistic                          0.8371
+Mean absolute error                      0.0072
+Root mean squared error                  0.0817
+Relative absolute error                 17.0182 %
+Root relative squared error             56.1259 %
+Total Number of Instances             9690     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.829    0.003    0.853      0.829    0.841      0.837    0.939     0.745     0
+                 0.997    0.171    0.996      0.997    0.997      0.837    0.939     0.997     1
+Weighted Avg.    0.993    0.168    0.993      0.993    0.993      0.837    0.939     0.992     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+  174   36 |    a = 0
+   30 9450 |    b = 1
+
