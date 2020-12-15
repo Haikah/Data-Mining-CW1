@@ -1,0 +1,170 @@
+#Linear Regression - training and test set with Normalization
+import pandas as pd
+import numpy as np
+import sklearn.linear_model as l_m
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+from sklearn import preprocessing
+df_input=pd.read_csv('/content/gdrive/My Drive/DMML CW2/x_train_gr_smpl (1).csv')
+#df.head()
+X=df_input.values
+X_train = preprocessing.normalize(X)
+#print(X_train.shape)
+df_output=pd.read_csv('/content/gdrive/My Drive/DMML CW2/y_train_smpl (1).csv')
+Y=df_output.values
+Y_train = preprocessing.normalize(Y)
+#print(Y_train.shape)
+test_input=pd.read_csv('/content/gdrive/My Drive/DMML CW2/x_test_gr_smpl.csv')
+X1=test_input.values
+X_test = preprocessing.normalize(X1)
+test_output=pd.read_csv('/content/gdrive/My Drive/DMML CW2/y_test_smpl.csv')
+Y1=test_output.values
+Y_test = preprocessing.normalize(Y1)
+# define feature selection
+#fs = SelectKBest(score_func=f_regression, k=150)
+# apply feature selection
+#X_selected = fs.fit_transform(X_train, Y_train.ravel())
+#print(X_selected.shape)
+#Training the model
+linear_model=l_m.LinearRegression()
+model=linear_model.fit(X_train,Y_train)
+#Prediction
+prediction = model.predict(X_test)
+#MSE = mean_squared_error(Y_test, prediction)
+#print("Mean Squared Error",MSE)
+#r_score=r2_score(Y_test, prediction)
+#print("Coefficient of determination %.2f",r2_score)
+print("Simple model of Linear Regression")
+print("\n")
+from sklearn.metrics import r2_score
+from sklearn import metrics
+print("R-Square Value",r2_score(Y_test,prediction))
+print("\n")
+print ("mean_absolute_error :",metrics.mean_absolute_error(Y_test,prediction))
+print("\n")
+print ("mean_squared_error : ",metrics.mean_squared_error(Y_test,prediction))
+print("\n")
+print ("root_mean_squared_error : ",np.sqrt(metrics.mean_squared_error(Y_test,prediction)))
+
+----------------------------------------------------------------------------------------------------------------------
+#Linear Classifier using train test split - Normalization - 4000 test
+import pandas as pd
+import numpy as np
+import sklearn.linear_model as l_m
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+scaler = preprocessing.StandardScaler()
+df_input=pd.read_csv('/content/gdrive/My Drive/DMML CW2/x_train_gr_smpl (1).csv')
+#df.head()
+X1=df_input.values
+#print(X_train.shape)
+df_output=pd.read_csv('/content/gdrive/My Drive/DMML CW2/y_train_smpl (1).csv')
+Y1=df_output.values
+#print(Y_train.shape)
+X1_train, X1_test, Y1_train, Y1_test = train_test_split(X1, Y1, test_size=0.41279669762641, random_state=1)
+print(X1_train.shape)
+print(Y1_train.shape)
+print(X1_test.shape)
+print(Y1_test.shape)
+X_train = preprocessing.normalize(X1_train)
+Y_train = preprocessing.normalize(Y1_train)
+X_test = preprocessing.normalize(X1_test)
+Y_test = preprocessing.normalize(Y1_test)
+linear_model=l_m.LinearRegression()
+model=linear_model.fit(X_train,Y_train)
+#Prediction
+prediction = model.predict(X_test)
+print("Simple model of Linear Regression")
+print("\n")
+from sklearn.metrics import r2_score
+from sklearn import metrics
+print("R-Square Value",r2_score(Y_test,prediction))
+print("\n")
+print ("mean_absolute_error :",metrics.mean_absolute_error(Y_test,prediction))
+print("\n")
+print ("mean_squared_error : ",metrics.mean_squared_error(Y_test,prediction))
+print("\n")
+print ("root_mean_squared_error : ",np.sqrt(metrics.mean_squared_error(Y_test,prediction)))
+----------------------------------------------------------------------------------------------------------------
+#Linear Classifier using train test split - Normalization - 9000 test
+import pandas as pd
+import numpy as np
+import sklearn.linear_model as l_m
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+scaler = preprocessing.StandardScaler()
+df_input=pd.read_csv('/content/gdrive/My Drive/DMML CW2/x_train_gr_smpl (1).csv')
+#df.head()
+X1=df_input.values
+#print(X_train.shape)
+df_output=pd.read_csv('/content/gdrive/My Drive/DMML CW2/y_train_smpl (1).csv')
+Y1=df_output.values
+#print(Y_train.shape)
+X1_train, X1_test, Y1_train, Y1_test = train_test_split(X1, Y1, test_size=0.9287925696594427, random_state=1)
+print(X1_train.shape)
+print(Y1_train.shape)
+print(X1_test.shape)
+print(Y1_test.shape)
+X_train = preprocessing.normalize(X1_train)
+Y_train = preprocessing.normalize(Y1_train)
+X_test = preprocessing.normalize(X1_test)
+Y_test = preprocessing.normalize(Y1_test)
+linear_model=l_m.LinearRegression()
+model=linear_model.fit(X_train,Y_train)
+#Prediction
+prediction = model.predict(X_test)
+print("Simple model of Linear Regression")
+print("\n")
+from sklearn.metrics import r2_score
+from sklearn import metrics
+print("R-Square Value",r2_score(Y_test,prediction))
+print("\n")
+print ("mean_absolute_error :",metrics.mean_absolute_error(Y_test,prediction))
+print("\n")
+print ("mean_squared_error : ",metrics.mean_squared_error(Y_test,prediction))
+print("\n")
+print ("root_mean_squared_error : ",np.sqrt(metrics.mean_squared_error(Y_test,prediction)))
+-------------------------------------------------------------------------------------------------------------------
+#Linear Classifier using CV - Normalization
+import pandas as pd
+import numpy as np
+import sklearn.linear_model as l_m
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score
+from sklearn import metrics
+from sklearn.model_selection import cross_validate
+scaler = preprocessing.StandardScaler()
+df_input=pd.read_csv('/content/gdrive/My Drive/DMML CW2/x_train_gr_smpl (1).csv')
+#df.head()
+X1=df_input.values
+#print(X_train.shape)
+df_output=pd.read_csv('/content/gdrive/My Drive/DMML CW2/y_train_smpl (1).csv')
+Y1=df_output.values
+#print(Y_train.shape)
+X_train = preprocessing.normalize(X1)
+Y_train = preprocessing.normalize(Y1)
+linear_model=l_m.LinearRegression()
+print("Simple model of Linear Regression using Cross Validation")
+print("\n")
+scores = cross_validate(linear_model, X_train, Y_train, cv=10,scoring=('r2', 'neg_mean_absolute_error', 'neg_mean_squared_error', 'neg_root_mean_squared_error'), return_train_score=True)
+#print(scores['test_neg_mean_squared_error'])
+#print(scores['train_neg_mean_squared_error'])
+test_r2=scores['test_r2']
+print("Average R2 value: %.4f%%" % np.mean(test_r2))
+test_mse=scores['test_neg_mean_squared_error']
+print("Average Mean Squared value: %.4f%%" % np.mean(test_mse))
+test_mae=scores['test_neg_mean_absolute_error']
+print("Average Mean Absolute value: %.4f%%" % np.mean(test_mae))
+test_rmse=scores['test_neg_root_mean_squared_error']
+print("Average Root Mean Squared error: %.4f%" % np.mean(test_rmse))
